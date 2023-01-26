@@ -23,5 +23,5 @@ void main(){
   print("5 + 5 is ${addNumbers(number: 5)}");
 } 
 
-// to run this file, use :
+// To run this file, use :
 //  dart run scratch.dart in terminal
