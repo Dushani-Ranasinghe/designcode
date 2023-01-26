@@ -1,6 +1,5 @@
 // ignore_for_file: prefer_const_constructors
-import 'package:designcode/components/sidebar_row.dart';
-import 'package:designcode/model/sidebar.dart';
+import 'package:designcode/screens/sidebar_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -14,11 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-          body: Center(
-        child: SidebarRow(item: sidebarItem[1],),
-      )),
+      home: Scaffold(body: SidebarScreen()),
     );
   }
 }
-
