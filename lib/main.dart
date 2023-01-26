@@ -33,6 +33,7 @@ class MyApp extends StatelessWidget {
               width: 12,
             ),
             Container(
+              color: Colors.white,
               child: Text(
                 "Home",
                 style: TextStyle(
