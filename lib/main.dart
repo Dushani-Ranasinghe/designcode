@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 
 import 'components/cards/recent_course_card.dart';
 import 'components/lists/recent_course_list.dart';
+import 'components/searchfield_widget.dart';
 
 void main() {
   runApp(const MyApp());
@@ -85,48 +86,7 @@ class HomeScreenNavBar extends StatelessWidget {
   }
 }
 
-class SearchFieldWidget extends StatelessWidget {
-  const SearchFieldWidget({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return Expanded(
-        child: Padding(
-      padding: EdgeInsets.only(left: 12.0, right: 33.0),
-      child: Container(
-        decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(14.0),
-            boxShadow: [
-              BoxShadow(
-                color: kShadowColor,
-                offset: Offset(0, 12),
-                blurRadius: 16.0,
-              )
-            ]),
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 16.0),
-          child: TextField(
-            cursorColor: kPrimaryLabelColor,
-            decoration: InputDecoration(
-                icon: Icon(
-                  Icons.search,
-                  color: kPrimaryLabelColor,
-                  size: 20.0,
-                ),
-                border: InputBorder.none,
-                hintText: "Serch for Courses",
-                hintStyle: kSearchPlaceholderStyle),
-            style: kSearchTextStyle,
-            onChanged: (newText) {
-              print(newText);
-            },
-          ),
-        ),
-      ),
-    ));
-  }
-}
 
 class SideBarButton extends StatelessWidget {
   const SideBarButton({
