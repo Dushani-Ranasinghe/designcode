@@ -6,7 +6,7 @@ import 'sidebar_button.dart';
 
 class HomeScreenNavBar extends StatelessWidget {
     HomeScreenNavBar({required this.triggerAnimation});
-  final Function triggerAnimation; 
+  final VoidCallback triggerAnimation; 
 
   @override
   Widget build(BuildContext context) {
