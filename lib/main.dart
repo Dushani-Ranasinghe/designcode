@@ -6,6 +6,7 @@ import 'package:designcode/model/course.dart';
 import 'package:flutter/material.dart';
 
 import 'components/cards/recent_course_card.dart';
+import 'components/home_screen.dart';
 import 'components/lists/recent_course_list.dart';
 import 'components/searchfield_widget.dart';
 import 'components/sidebar_button.dart';
@@ -58,34 +59,7 @@ class MyApp extends StatelessWidget {
 }
 
 
-class HomeScreenNavBar extends StatelessWidget {
-  const HomeScreenNavBar({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.all(20.0),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          SideBarButton(),
-          SearchFieldWidget(),
-          Icon(
-            Icons.notifications,
-            color: kPrimaryLabelColor,
-          ),
-          SizedBox(
-            width: 16.0,
-          ),
-          CircleAvatar(
-            radius: 18.0,
-            backgroundImage: AssetImage('asset/images/profile.jpg'),
-          )
-        ],
-      ),
-    );
-  }
-}
 
 
 
