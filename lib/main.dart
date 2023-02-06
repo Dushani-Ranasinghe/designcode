@@ -1,15 +1,8 @@
-// ignore_for_file: prefer_const_constructors
-// import 'package:designcode/screens/sidebar_screen.dart';
-
 import 'package:designcode/constants.dart';
-import 'package:designcode/model/course.dart';
 import 'package:flutter/material.dart';
 
-import 'components/cards/recent_course_card.dart';
 import 'components/home_screen.dart';
 import 'components/lists/recent_course_list.dart';
-import 'components/searchfield_widget.dart';
-import 'components/sidebar_button.dart';
 
 void main() {
   runApp(const MyApp());
