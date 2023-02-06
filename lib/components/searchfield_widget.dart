@@ -32,7 +32,7 @@ class SearchFieldWidget extends StatelessWidget {
                   size: 20.0,
                 ),
                 border: InputBorder.none,
-                hintText: "Serch for Courses",
+                hintText: "Search for Courses",
                 hintStyle: kSearchPlaceholderStyle),
             style: kSearchTextStyle,
             onChanged: (newText) {
