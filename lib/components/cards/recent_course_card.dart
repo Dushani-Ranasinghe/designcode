@@ -5,7 +5,6 @@ import '../../constants.dart';
 import '../../model/course.dart';
 
 class RecentCourceCard extends StatelessWidget {
-  // const RecentCourceCard({super.key});
 
   const RecentCourceCard({required this.course, super.key});
   final Course course;

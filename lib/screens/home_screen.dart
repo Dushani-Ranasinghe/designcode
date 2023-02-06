@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:sliding_up_panel/sliding_up_panel.dart';
 
 import '../components/home_screen_navbar.dart';
 import '../components/lists/explore_course_list.dart';
