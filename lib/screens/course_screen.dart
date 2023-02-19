@@ -161,6 +161,7 @@ class _CourseScreenState extends State<CourseScreen> {
                   top: 12.0,
                   left: 28.0,
                   right: 28.0,
+                  bottom: 10.0
                 ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -283,6 +284,33 @@ class _CourseScreenState extends State<CourseScreen> {
                         )
                       ],
                     ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 28.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "5 years ago, I couldn’t write a single line of Swift. I learned it and moved to React, Flutter while using increasingly complex design tools. I don’t regret learning them because SwiftUI takes all of their best concepts. It is hands-down the best way for designers to take a first step into code.",
+                      style: kBodyLabelStyle,
+                    ),
+                    SizedBox(
+                      height: 24.0,
+                    ),
+                    Text(
+                      "About this course",
+                      style: kTitle1Style,
+                    ),
+                    SizedBox(
+                      height: 24.0,
+                    ),
+                    Text(
+                      "This course was written for people who are passionate about design and about Apple's SwiftUI. It beginner-friendly, but it is also packed with tricks and cool workflows about building the best UI. Currently, Xcode 11 is still in beta so the installation process may be a little hard. However, once you get everything working, then it'll get much friendlier!",
+                      style: kBodyLabelStyle,
+                    ),
+                    SizedBox(height: 24.0),
                   ],
                 ),
               )
