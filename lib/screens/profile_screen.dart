@@ -6,7 +6,12 @@ import 'package:flutter/material.dart';
 import '../constants.dart';
 
 class ProfileScreen extends StatelessWidget {
-  const ProfileScreen({super.key});
+  final List<String> badges = [
+    'badge-01.png',
+    'badge-02.png',
+    'badge-03.png',
+    'badge-04.png',
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -171,6 +176,35 @@ class ProfileScreen extends StatelessWidget {
                             ],
                           )
                         ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: 16.0,
+                    ),
+                    Container(
+                      height: 112.0,
+                      child: ListView.builder(
+                        padding: EdgeInsets.only(bottom: 28.0),
+                        scrollDirection: Axis.horizontal,
+                        itemCount: badges.length,
+                        itemBuilder: (context, index) {
+                          return Container(
+                            padding: EdgeInsets.only(
+                              left: 20.0,
+                              right: index != 3 ? 0.0 : 20.0,
+                            ),
+                            decoration: BoxDecoration(
+                              boxShadow: [
+                                BoxShadow(
+                                  color: kShadowColor.withOpacity(0.1),
+                                  offset: Offset(0, 12),
+                                  blurRadius: 18.0,
+                                ),
+                              ],
+                            ),
+                            child: Image.asset('asset/badges/${badges[index]}'),
+                          );
+                        },
                       ),
                     ),
                   ],
