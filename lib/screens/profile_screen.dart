@@ -144,6 +144,35 @@ class ProfileScreen extends StatelessWidget {
                             ),
                           ],
                         )),
+                    Padding(
+                      padding: EdgeInsets.only(
+                        top: 28.0,
+                        bottom: 16.0,
+                        left: 20.0,
+                        right: 20.0,
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            "Badges",
+                            style: kHeadlineLabelStyle,
+                          ),
+                          Row(
+                            children: [
+                              Text(
+                                "See all",
+                                style: kSearchPlaceholderStyle,
+                              ),
+                              Icon(
+                                Icons.chevron_right,
+                                color: kSecondaryLabelColor,
+                              ),
+                            ],
+                          )
+                        ],
+                      ),
+                    ),
                   ],
                 ),
               ),
