@@ -43,7 +43,10 @@ class ContinueWatchingScreen extends StatelessWidget {
               style: kTitle2Style,
             ),
           ),
-          ContinueWatchingList(),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 24.0),
+            child: ContinueWatchingList(),
+          ),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 32.0),
             child: Text(

@@ -25,11 +25,11 @@ class ContinueWatchingScreenCard extends StatelessWidget {
                   BoxShadow(
                       color: course.background.colors[0].withOpacity(0.3),
                       offset: Offset(0, 20),
-                      blurRadius: 30.0),
+                      blurRadius: 20.0),
                   BoxShadow(
                       color: course.background.colors[1].withOpacity(0.3),
                       offset: Offset(0, 20),
-                      blurRadius: 30.0)
+                      blurRadius: 20.0)
                 ]),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(41.0),
