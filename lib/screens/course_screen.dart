@@ -1,3 +1,6 @@
+import 'dart:io';
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../constants.dart';
 import '../model/course.dart';
@@ -153,6 +156,136 @@ class _CourseScreenState extends State<CourseScreen> {
                   )
                 ],
               ),
+              Padding(
+                padding: EdgeInsets.only(
+                  top: 12.0,
+                  left: 28.0,
+                  right: 28.0,
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Row(
+                      children: [
+                        Container(
+                          height: 58.0,
+                          width: 58.0,
+                          decoration: BoxDecoration(
+                            gradient: widget.course.background,
+                            borderRadius: BorderRadius.circular(29.0),
+                          ),
+                          child: Padding(
+                            padding: EdgeInsets.all(4.0),
+                            child: Container(
+                              height: 58.0,
+                              width: 58.0,
+                              decoration: BoxDecoration(
+                                gradient: widget.course.background,
+                                borderRadius: BorderRadius.circular(29.0),
+                              ),
+                              child: Padding(
+                                padding: EdgeInsets.all(4.0),
+                                child: Container(
+                                  padding: EdgeInsets.all(4.0),
+                                  decoration: BoxDecoration(
+                                    color: kBackgroundColor,
+                                    borderRadius: BorderRadius.circular(29.0),
+                                  ),
+                                  child: CircleAvatar(
+                                    radius: 21.0,
+                                    backgroundColor: kCourseElementIconColor,
+                                    child: Icon(
+                                      Platform.isAndroid
+                                          ? Icons.people
+                                          : CupertinoIcons.group_solid,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          width: 12.0,
+                        ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "28.7k",
+                              style: kTitle2Style,
+                            ),
+                            Text(
+                              "Students",
+                              style: kSearchPlaceholderStyle,
+                            ),
+                          ],
+                        )
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Container(
+                          height: 58.0,
+                          width: 58.0,
+                          decoration: BoxDecoration(
+                            gradient: widget.course.background,
+                            borderRadius: BorderRadius.circular(29.0),
+                          ),
+                          child: Padding(
+                            padding: EdgeInsets.all(4.0),
+                            child: Container(
+                              height: 58.0,
+                              width: 58.0,
+                              decoration: BoxDecoration(
+                                gradient: widget.course.background,
+                                borderRadius: BorderRadius.circular(29.0),
+                              ),
+                              child: Padding(
+                                padding: EdgeInsets.all(4.0),
+                                child: Container(
+                                  padding: EdgeInsets.all(4.0),
+                                  decoration: BoxDecoration(
+                                    color: kBackgroundColor,
+                                    borderRadius: BorderRadius.circular(29.0),
+                                  ),
+                                  child: CircleAvatar(
+                                    radius: 21.0,
+                                    backgroundColor: kCourseElementIconColor,
+                                    child: Icon(
+                                      Platform.isAndroid
+                                          ? Icons.format_quote
+                                          : CupertinoIcons.news_solid,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          width: 12.0,
+                        ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "12.4k",
+                              style: kTitle2Style,
+                            ),
+                            Text(
+                              "Comments",
+                              style: kSearchPlaceholderStyle,
+                            ),
+                          ],
+                        )
+                      ],
+                    ),
+                  ],
+                ),
+              )
             ],
           ),
         ),
