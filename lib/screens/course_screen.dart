@@ -447,9 +447,6 @@ class CourseSectionsScreen extends StatelessWidget {
           ),
         ),
         CourseSectionList(),
-        SizedBox(
-          height: 32.0,
-        ),
       ]),
     );
   }
@@ -470,7 +467,7 @@ class CourseSectionList extends StatelessWidget {
   }
     cards.add(
       Padding(
-        padding: EdgeInsets.only(top: 12.0),
+        padding: EdgeInsets.only(top: 12.0, bottom: 12.0),
         child: Text(
           "No more Sections to view, look\nfor more in our courses",
           style: kCaptionLabelStyle,

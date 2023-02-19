@@ -83,7 +83,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                       style: kLargeTitleStyle,
                     ),
                     SizedBox(
-                      height: 5.0,
+                      height: 3.0,
                     ),
                     Text(
                       "23 courses, more coming",
@@ -93,12 +93,12 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                 ),
               ),
               SizedBox(
-                height: 20.0,
+                height: 5.0,
               ),
               RecentCourseList(),
               Padding(
                 padding: EdgeInsets.only(
-                    left: 20.0, right: 20.0, top: 25.0, bottom: 16.0),
+                    left: 20.0, right: 20.0, top: 10.0, bottom: 10.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [

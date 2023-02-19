@@ -9,7 +9,7 @@ class ExploreCourseList extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding:
-          EdgeInsets.only(left: 5.0, bottom: 16.0),
+          EdgeInsets.only(left: 5.0, bottom: 100.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
