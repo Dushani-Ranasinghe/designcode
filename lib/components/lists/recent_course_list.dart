@@ -1,7 +1,6 @@
-import 'package:designcode/main.dart';
 import 'package:flutter/material.dart';
-
 import '../../model/course.dart';
+import '../../screens/course_screen.dart';
 import '../cards/recent_course_card.dart';
 
 class RecentCourseList extends StatefulWidget {
