@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
-import '../components/cards/continue_watching_card.dart';
 import '../components/certificate_viewer.dart';
+import '../components/lists/continue_watching_list.dart';
 import '../constants.dart';
-import '../../model/course.dart';
 
 class ContinueWatchingScreen extends StatelessWidget {
   const ContinueWatchingScreen({super.key});
@@ -58,64 +57,6 @@ class ContinueWatchingScreen extends StatelessWidget {
           Expanded(child: CertificateViewer()),
         ],
       ),
-    );
-  }
-}
-
-class ContinueWatchingList extends StatefulWidget {
-  const ContinueWatchingList({super.key});
-
-  @override
-  State<ContinueWatchingList> createState() => _ContinueWatchingListState();
-}
-
-class _ContinueWatchingListState extends State<ContinueWatchingList> {
-  List<Container> indicators = [];
-  int currentPage = 0;
-
-//indicators
-  Widget updateIndicators() {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: continueWatchingCourses.map((course) {
-        var index = continueWatchingCourses.indexOf(course);
-        return Container(
-          width: 7.0,
-          height: 7.0,
-          margin: EdgeInsets.symmetric(horizontal: 6.0),
-          decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              color:
-                  currentPage == index ? Color(0xFF0971FE) : Color(0xFFA6AEBD)),
-        );
-      }).toList(),
-    );
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        SizedBox(
-          height: 200.0,
-          width: double.infinity,
-          child: PageView.builder(
-            itemCount: continueWatchingCourses.length,
-            itemBuilder: ((context, index) {
-              return ContinueWatchingScreenCard(
-                course: continueWatchingCourses[index],
-              );
-            }),
-            controller: PageController(initialPage: 0, viewportFraction: 0.75),
-            onPageChanged: ((index) {
-              setState(() {
-                currentPage = index;
-              });
-            }),
-          ),
-        ),
-        updateIndicators(),
-      ],
     );
   }
 }

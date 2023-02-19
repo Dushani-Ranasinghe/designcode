@@ -43,6 +43,7 @@ class _RecentCourseListState extends State<RecentCourseList> {
           child: PageView.builder(
             itemBuilder: (context, index) {
               return GestureDetector(
+                // go to screen page
                 onTap: () {
                   Navigator.push(context, MaterialPageRoute(builder: (context)=> CourseScreen(course: recentCourses[index],), fullscreenDialog: true));
                 },
