@@ -93,6 +93,57 @@ class ProfileScreen extends StatelessWidget {
                         ],
                       ),
                     ),
+                    Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 20.0),
+                        child: Row(
+                          children: [
+                            Container(
+                              height: 84.0,
+                              width: 84.0,
+                              decoration: BoxDecoration(
+                                gradient: RadialGradient(
+                                  colors: [
+                                    Color(0xFF00AEFF),
+                                    Color(0xFF0076FF),
+                                  ],
+                                ),
+                                borderRadius: BorderRadius.circular(42.0),
+                              ),
+                              child: Padding(
+                                padding: EdgeInsets.all(6.0),
+                                child: Container(
+                                  padding: EdgeInsets.all(6.0),
+                                  decoration: BoxDecoration(
+                                    color: kBackgroundColor,
+                                    borderRadius: BorderRadius.circular(42.0),
+                                  ),
+                                  child: CircleAvatar(
+                                    backgroundImage:
+                                        AssetImage('asset/images/profile.jpg'),
+                                    radius: 30.0,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            SizedBox(
+                              width: 16.0,
+                            ),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "Sai Kambampati",
+                                  style: kTitle2Style,
+                                ),
+                                SizedBox(height: 8.0),
+                                Text(
+                                  "Flutter Developer",
+                                  style: kSecondaryCalloutLabelStyle,
+                                ),
+                              ],
+                            ),
+                          ],
+                        )),
                   ],
                 ),
               ),
