@@ -1,3 +1,6 @@
+import 'dart:io';
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../constants.dart';
@@ -60,6 +63,31 @@ class ProfileScreen extends StatelessWidget {
                                   color: kSecondaryLabelColor,
                                 ),
                               ],
+                            ),
+                          ),
+                          Text(
+                            "Profile",
+                            style: kCalloutLabelStyle,
+                          ),
+                          Container(
+                            width: 40.0,
+                            height: 40.0,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(14.0),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: kShadowColor,
+                                  offset: Offset(0, 12),
+                                  blurRadius: 32.0,
+                                )
+                              ],
+                            ),
+                            child: Icon(
+                              Platform.isAndroid
+                                  ? Icons.settings
+                                  : CupertinoIcons.settings_solid,
+                              color: kSecondaryLabelColor,
                             ),
                           ),
                         ],
