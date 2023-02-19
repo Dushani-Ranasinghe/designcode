@@ -106,3 +106,4 @@ class ContinueWatchingScreenCard extends StatelessWidget {
     );
   }
 }
+

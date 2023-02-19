@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 import '../components/cards/continue_watching_card.dart';
+import '../components/certificate_viewer.dart';
 import '../constants.dart';
 import '../../model/course.dart';
 
@@ -18,8 +19,8 @@ class ContinueWatchingScreen extends StatelessWidget {
       boxShadow: [
         BoxShadow(color: kShadowColor, offset: Offset(0, -12), blurRadius: 32.0)
       ],
-      minHeight: 85.0,
-      maxHeight: MediaQuery.of(context).size.height * 0.75,
+      minHeight: 80.0,
+      maxHeight: MediaQuery.of(context).size.height * 0.85,
       panel: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -44,7 +45,7 @@ class ContinueWatchingScreen extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(vertical: 24.0),
+            padding: const EdgeInsets.symmetric(vertical: 10.0),
             child: ContinueWatchingList(),
           ),
           Padding(
@@ -54,6 +55,7 @@ class ContinueWatchingScreen extends StatelessWidget {
               style: kTitle2Style,
             ),
           ),
+          Expanded(child: CertificateViewer()),
         ],
       ),
     );
@@ -71,7 +73,7 @@ class _ContinueWatchingListState extends State<ContinueWatchingList> {
   List<Container> indicators = [];
   int currentPage = 0;
 
-//indicators 
+//indicators
   Widget updateIndicators() {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
