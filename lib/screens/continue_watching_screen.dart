@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
-
+import '../components/cards/continue_watching_card.dart';
 import '../constants.dart';
 import '../../model/course.dart';
 
@@ -43,7 +43,7 @@ class ContinueWatchingScreen extends StatelessWidget {
               style: kTitle2Style,
             ),
           ),
-          ContinueWatchingScreenCard(course: continueWatchingCourses[0]),
+          ContinueWatchingList(),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 32.0),
             child: Text(
@@ -57,82 +57,60 @@ class ContinueWatchingScreen extends StatelessWidget {
   }
 }
 
-class ContinueWatchingScreenCard extends StatelessWidget {
+class ContinueWatchingList extends StatefulWidget {
+  const ContinueWatchingList({super.key});
 
-  const ContinueWatchingScreenCard({required this.course, super.key});
-  final Course course;
+  @override
+  State<ContinueWatchingList> createState() => _ContinueWatchingListState();
+}
+
+class _ContinueWatchingListState extends State<ContinueWatchingList> {
+  List<Container> indicators = [];
+  int currentPage = 0;
+
+//indicators 
+  Widget updateIndicators() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: continueWatchingCourses.map((course) {
+        var index = continueWatchingCourses.indexOf(course);
+        return Container(
+          width: 7.0,
+          height: 7.0,
+          margin: EdgeInsets.symmetric(horizontal: 6.0),
+          decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color:
+                  currentPage == index ? Color(0xFF0971FE) : Color(0xFFA6AEBD)),
+        );
+      }).toList(),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      alignment: Alignment.topRight,
+    return Column(
       children: [
-      Padding(
-        padding: EdgeInsets.only(top: 20.0),
-        child: Container(
-          width: 240,
-          height: 240,
-          decoration: BoxDecoration(
-              gradient: course.background,
-              borderRadius: BorderRadius.circular(41.0),
-              boxShadow: [
-                BoxShadow(
-                  color: course.background.colors[0].withOpacity(0.3), offset: Offset(0,20), blurRadius: 30.0
-                ),
-                BoxShadow(
-                  color: course.background.colors[1].withOpacity(0.3), offset: Offset(0,20), blurRadius: 30.0
-                )
-              ]),
-          child: Column(
-            children: [
-              Padding(
-                padding: EdgeInsets.only(top: 32.0, left: 32.0, right: 32.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      course.courseSubtitle,
-                      style: kCardSubtitleStyle,
-                    ),
-                    SizedBox(
-                      height: 6.0,
-                    ),
-                    Text(
-                      course.courseTitle,
-                      style: kCardTitleStyle,
-                    )
-                  ],
-                ),
-              ),
-              Expanded(
-                  child: Image.asset(
-                'asset/illustrations/${course.illustration}',
-                fit: BoxFit.cover,
-              ))
-            ],
+        SizedBox(
+          height: 200.0,
+          width: double.infinity,
+          child: PageView.builder(
+            itemCount: continueWatchingCourses.length,
+            itemBuilder: ((context, index) {
+              return ContinueWatchingScreenCard(
+                course: continueWatchingCourses[index],
+              );
+            }),
+            controller: PageController(initialPage: 0, viewportFraction: 0.75),
+            onPageChanged: ((index) {
+              setState(() {
+                currentPage = index;
+              });
+            }),
           ),
         ),
-      ),
-      Padding(
-        padding: EdgeInsets.only(right: 42.0),
-        child: Container(
-          width: 60.0,
-          height: 50.0,
-          decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(18.0),
-              boxShadow: const [
-                BoxShadow(
-                  color: kShadowColor,
-                  offset: Offset(0, 4),
-                  blurRadius: 16.0,
-                )
-              ]),
-               padding: EdgeInsets.all(12.0),
-          child: Image.asset('asset/logos/${course.logo}'),
-        ),
-      )
-    ]);
+        updateIndicators(),
+      ],
+    );
   }
 }
-
