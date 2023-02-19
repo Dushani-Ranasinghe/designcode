@@ -5,15 +5,12 @@ import '../../constants.dart';
 import '../../model/course.dart';
 
 class RecentCourceCard extends StatelessWidget {
-
   const RecentCourceCard({required this.course, super.key});
   final Course course;
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      alignment: Alignment.topRight,
-      children: [
+    return Stack(alignment: Alignment.topRight, children: [
       Padding(
         padding: EdgeInsets.only(top: 20.0),
         child: Container(
@@ -24,11 +21,13 @@ class RecentCourceCard extends StatelessWidget {
               borderRadius: BorderRadius.circular(41.0),
               boxShadow: [
                 BoxShadow(
-                  color: course.background.colors[0].withOpacity(0.3), offset: Offset(0,20), blurRadius: 30.0
-                ),
+                    color: course.background.colors[0].withOpacity(0.3),
+                    offset: Offset(0, 20),
+                    blurRadius: 30.0),
                 BoxShadow(
-                  color: course.background.colors[1].withOpacity(0.3), offset: Offset(0,20), blurRadius: 30.0
-                )
+                    color: course.background.colors[1].withOpacity(0.3),
+                    offset: Offset(0, 20),
+                    blurRadius: 30.0)
               ]),
           child: Column(
             children: [
@@ -37,24 +36,33 @@ class RecentCourceCard extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      course.courseSubtitle,
-                      style: kCardSubtitleStyle,
+                    Hero(
+                      tag: course.courseSubtitle,
+                      child: Text(
+                        course.courseSubtitle,
+                        style: kCardSubtitleStyle,
+                      ),
                     ),
                     SizedBox(
                       height: 6.0,
                     ),
-                    Text(
-                      course.courseTitle,
-                      style: kCardTitleStyle,
+                    Hero(
+                      tag: course.courseTitle,
+                      child: Text(
+                        course.courseTitle,
+                        style: kCardTitleStyle,
+                      ),
                     )
                   ],
                 ),
               ),
               Expanded(
-                  child: Image.asset(
-                'asset/illustrations/${course.illustration}',
-                fit: BoxFit.cover,
+                  child: Hero(
+                tag: course.illustration,
+                child: Image.asset(
+                  'asset/illustrations/${course.illustration}',
+                  fit: BoxFit.cover,
+                ),
               ))
             ],
           ),
@@ -75,8 +83,10 @@ class RecentCourceCard extends StatelessWidget {
                   blurRadius: 16.0,
                 )
               ]),
-               padding: EdgeInsets.all(12.0),
-          child: Image.asset("asset/logos/${course.logo}"),
+          padding: EdgeInsets.all(12.0),
+          child: Hero(
+              tag: course.logo,
+              child: Image.asset("asset/logos/${course.logo}")),
         ),
       )
     ]);
